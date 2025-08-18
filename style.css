@@ -1,0 +1,392 @@
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        #f5f3ee,
+        #f5f3ee 11px,
+        #ede7dc 10px,
+        #ede7dc 12px
+    );
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f5e8d6;
+    color: #000000;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+header, section, footer {
+    max-width: 1000px;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, rgba(255, 252, 248, 0.8), rgba(245, 232, 214, 0.8));
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+header:hover, section:hover, footer:hover {
+    transform: translateY(-3px);
+}
+
+h2, h3, h4 {
+    color: #8B4513;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+}
+
+h4 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.choices {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.choice-item {
+    flex: 0 0 auto;
+    padding: 1rem;
+    background: transparent;
+    transition: transform 0.3s ease;
+}
+
+.choice-item:hover {
+    transform: scale(1.05);
+}
+
+.choices img {
+    max-width: clamp(180px, 20vw, 200px);
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.choices img:hover {
+    transform: scale(1.08);
+}
+
+.categoryInterestSelection {
+    background-color: #8B0000;
+    color: #fffcf8;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    min-height: 44px;
+    margin-top: 0.5rem;
+}
+
+.categoryInterestSelection:hover, .categoryInterestSelection:focus {
+    background-color: #660000;
+    transform: translateY(-2px);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 25vw, 250px), 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.grid-container img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.grid-container img:hover, .grid-container img:focus {
+    transform: scale(1.05);
+}
+
+.grid-container img.selected {
+    outline: 3px solid #8B4513;
+    outline-offset: 2px;
+}
+
+.colourPreference .palette-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.colourPreference img {
+    width: clamp(80px, 15vw, 100px);
+    height: clamp(80px, 15vw, 100px);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.colourPreference img:hover, .colourPreference img:focus {
+    transform: scale(1.05);
+}
+
+.colourPreference img.selected {
+    outline: 3px solid #8B4513;
+    outline-offset: 2px;
+}
+
+button {
+    background-color: #8B0000;
+    color: #fffcf8;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    margin-top: 1rem;
+}
+
+button:hover, button:focus {
+    background-color: #660000;
+    transform: translateY(-2px);
+}
+
+#priceRange {
+    width: clamp(200px, 50vw, 250px);
+    margin: 1rem;
+    accent-color: #8B4513;
+}
+
+#priceValue {
+    margin-left: 0.5rem;
+    color: #8B4513;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 252, 248, 0.9);
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    max-width: clamp(250px, 60vw, 280px);
+    min-height: 44px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #8B0000;
+    outline: none;
+}
+
+.personalDetails div {
+    margin: 1rem 0;
+}
+
+.header {
+    position: relative;
+    background: transparent;
+}
+
+#logo {
+    position: sticky;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(50px, 10vw, 60px);
+    width: auto;
+}
+
+.title p {
+    margin: 0;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: #660000;
+    font-family: 'Yeseva One', cursive;
+}
+
+.hero {
+    padding: clamp(1.5rem, 5vw, 2rem);
+}
+
+#hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 8vw, 3rem);
+    color: #8B0000;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+}
+
+#hero-sub-title {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+}
+
+#hero-slogan {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-style: italic;
+    color: #333;
+}
+
+.cta-container {
+    margin-top: 1rem;
+}
+
+#cta-btn {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+#wowScreen.hidden {
+    display: none;
+}
+
+#wowScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.wow-content {
+    background: rgba(255, 248, 240, 0.95);
+    padding: clamp(1.5rem, 5vw, 2rem);
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    max-width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.wow-content h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.wow-content p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    margin-bottom: 1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.about-us-section {
+    padding: clamp(1.5rem, 5vw, 2rem);
+}
+
+.about-us-section p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+footer {
+    padding: 1rem;
+    color: #8B4513;
+}
+
+footer h3 {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    header, section, footer {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .choices {
+        justify-content: flex-start;
+    }
+
+    .choice-item {
+        min-width: 150px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #hero-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    #hero-sub-title {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    #hero-slogan {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
+
+    .wow-content {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .choices img {
+        max-width: 120px;
+    }
+
+    button, .categoryInterestSelection {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        max-width: 90%;
+    }
+
+    #logo {
+        height: 40px;
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+}
